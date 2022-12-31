@@ -1,8 +1,8 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const app = express()
 const cors = require('cors')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 const htmlPath = __dirname + '/views/index.html'
 
 require('dotenv').config()
@@ -48,7 +48,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/users', function(req, res) {
-  debugger;
   let username = req.body.username;
   User.findOne({username}, (err, match) => {
     if(match) {
@@ -110,37 +109,28 @@ app.post('/api/users/:_id/exercises', (req, res) => {
 
 app.get('/api/users/:_id/logs', (req, res) => {
   const { from, to, limit } = req.query;
-  console.log(req.query)
-  console.log(req.url)
+  
 
   User.findById(req.params._id, (err, match) => {
-    debugger;
     let log = [];
     let loopLimit = limit === undefined ? match.log.length : limit;
-    for(let i = 0; i < loopLimit; i++ ) {
+    for(let i = 0; i < match.log.length; i++ ) {
       let doNotPush = false; 
       let value = match.log[i];
-      let index = i;
-
       let {description, duration, date} = value;
       
       if(JSON.stringify(req.query) !== '{}') {
-        console.log('We use the params here')
+        
         let dateDate = new Date(date);
         let fromDate = new Date(from);
         let toDate = new Date(to);
 
-        if(from !== undefined) {
-          console.log("The value of fromDate is: " + fromDate)
-          console.log(typeof fromDate)
-          console.log("The value of dateDate is: " + dateDate)
+        if(from !== undefined) {         
           //we do not include before from date
           if(fromDate > dateDate) doNotPush = true;
         }
 
         if(to !== undefined) {
-          console.log("The value of toDate is: " + toDate)
-          console.log("The value of dateDate is: " + dateDate)
           //we do not include after to date
           if(toDate < dateDate) doNotPush = true;
         }
@@ -152,17 +142,12 @@ app.get('/api/users/:_id/logs', (req, res) => {
           duration,
           date
         });
+        if(log.length === parseInt(limit)) {
+          i = match.log.length
+        }
       }
     }
-    
     let {username, _id} = match;
-    console.log({
-      username,
-      count: log.length,
-      _id,
-      log
-    })
-
     res.json({
       username,
       count: log.length,

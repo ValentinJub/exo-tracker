@@ -1,0 +1,221 @@
+{}
+/api/users/63b0a94fff9156a64dd8e708/logs
+{
+  _id: new ObjectId("63b0a94fff9156a64dd8e708"),
+  username: 'fcc_test_16725220632',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a94fff9156a64dd8e70b")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220632',
+  count: 1,
+  _id: new ObjectId("63b0a94fff9156a64dd8e708"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a94fff9156a64dd8e710/logs
+{
+  _id: new ObjectId("63b0a94fff9156a64dd8e710"),
+  username: 'fcc_test_16725220634',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a94fff9156a64dd8e713")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220634',
+  count: 1,
+  _id: new ObjectId("63b0a94fff9156a64dd8e710"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a94fff9156a64dd8e718/logs
+{
+  _id: new ObjectId("63b0a94fff9156a64dd8e718"),
+  username: 'fcc_test_16725220636',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a94fff9156a64dd8e71b")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220636',
+  count: 1,
+  _id: new ObjectId("63b0a94fff9156a64dd8e718"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a94fff9156a64dd8e720/logs
+{
+  _id: new ObjectId("63b0a94fff9156a64dd8e720"),
+  username: 'fcc_test_16725220638',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a950ff9156a64dd8e723")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220638',
+  count: 1,
+  _id: new ObjectId("63b0a94fff9156a64dd8e720"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a950ff9156a64dd8e728/logs
+{
+  _id: new ObjectId("63b0a950ff9156a64dd8e728"),
+  username: 'fcc_test_16725220641',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a950ff9156a64dd8e72b")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220641',
+  count: 1,
+  _id: new ObjectId("63b0a950ff9156a64dd8e728"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a950ff9156a64dd8e730/logs
+{
+  _id: new ObjectId("63b0a950ff9156a64dd8e730"),
+  username: 'fcc_test_16725220644',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a950ff9156a64dd8e733")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220644',
+  count: 1,
+  _id: new ObjectId("63b0a950ff9156a64dd8e730"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{}
+/api/users/63b0a950ff9156a64dd8e738/logs
+{
+  _id: new ObjectId("63b0a950ff9156a64dd8e738"),
+  username: 'fcc_test_16725220647',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Sat Dec 31 2022',
+      _id: new ObjectId("63b0a950ff9156a64dd8e73b")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220647',
+  count: 1,
+  _id: new ObjectId("63b0a950ff9156a64dd8e738"),
+  log: [ { description: 'test', duration: 60, date: 'Sat Dec 31 2022' } ]
+}
+{ from: '1989-12-31', to: '1990-01-04' }
+/api/users/63b0a951ff9156a64dd8e740/logs?from=1989-12-31&to=1990-01-04
+{
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  username: 'fcc_test_16725220650',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Mon Jan 01 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e743")
+    },
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Wed Jan 03 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e747")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220650',
+  count: 2,
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  log: [
+    { description: 'test', duration: 60, date: 'Mon Jan 01 1990' },
+    { description: 'test', duration: 60, date: 'Wed Jan 03 1990' }
+  ]
+}
+{ limit: '1' }
+/api/users/63b0a951ff9156a64dd8e740/logs?limit=1
+{
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  username: 'fcc_test_16725220650',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Mon Jan 01 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e743")
+    },
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Wed Jan 03 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e747")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220650',
+  count: 1,
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  log: [ { description: 'test', duration: 60, date: 'Mon Jan 01 1990' } ]
+}
+{ from: '1990-01-02', to: '1990-01-04', limit: '1' }
+/api/users/63b0a951ff9156a64dd8e740/logs?from=1990-01-02&to=1990-01-04&limit=1
+{
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  username: 'fcc_test_16725220650',
+  log: [
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Mon Jan 01 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e743")
+    },
+    {
+      description: 'test',
+      duration: 60,
+      date: 'Wed Jan 03 1990',
+      _id: new ObjectId("63b0a951ff9156a64dd8e747")
+    }
+  ]
+}
+{
+  username: 'fcc_test_16725220650',
+  count: 0,
+  _id: new ObjectId("63b0a951ff9156a64dd8e740"),
+  log: []
+}
