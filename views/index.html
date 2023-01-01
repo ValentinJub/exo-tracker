@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Exercise Tracker | freeCodeCamp</title>
-    <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"  type="image/x-icon" />
+    <link rel="shortcut icon" href="https://preview.redd.it/quch0lcijir91.png?width=640&crop=smart&auto=webp&s=9ac25854cc1492966d6058cfcf55f5e0eb7c2990"  type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
@@ -10,19 +10,33 @@
   <body>
     <div class="container">
       <h1>Exercise tracker</h1>
-      <form action="/api/users" method="post">
+      <form action="/api/users" method="POST">
         <h3>Create a New User</h3>
         <p><code>POST /api/users</code></p>
         <input id="uname" type="text" name="username" placeholder="username" />
         <input type="submit" value="Submit" />
       </form>
-      <form id="exercise-form" method="post">
+      <form action="/api/users" method="GET">
+        <h3>List All User</h3>
+        <p><code>GET /api/users</code></p>
+        <input type="submit" value="List" />
+      </form>
+      <form id="post-exercise-form" method="POST">
         <h3>Add exercises</h3>
         <p><code>POST /api/users/:_id/exercises</code></p>
         <input id="uid" type="text" name=":_id" placeholder=":_id" />
         <input id="desc" type="text" name="description" placeholder="description*" />
         <input id="dur" type="text" name="duration" placeholder="duration* (mins.)" />
         <input id="date" type="text" name="date" placeholder="date (yyyy-mm-dd)" />
+        <input type="submit" value="Submit" />
+      </form>
+      <form id="list-logs-form" method="GET">
+        <h3>List User Log</h3>
+        <p><code>GET /api/users/:_id/logs</code></p>
+        <input id="userid" type="text" name=":_id" placeholder=":_id" />
+        <label>From Date: (optional)<input id="from" type="date" name="from"/></label>
+        <label>To Date: (optional)<input id="to" type="date" name="to"/></label>
+        <label>Limit: (optional)<input id="limit" type="number" name="limit"/></label>
         <input type="submit" value="Submit" />
       </form>
       <p>
@@ -33,14 +47,23 @@
       <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
     </div>
     <script>
-      const exerciseForm = document.getElementById("exercise-form");
-
-      exerciseForm.addEventListener("submit", () => {
+      const postExerciseForm = document.getElementById("post-exercise-form");
+      const listLogsForm = document.getElementById("list-logs-form");
+      
+      postExerciseForm.addEventListener("submit", () => {
         const userId = document.getElementById("uid").value;
-        exerciseForm.action = `/api/users/${userId}/exercises`;
+        postExerciseForm.action = `/api/users/${userId}/exercises`;
 
-        exerciseForm.submit();
+        postExerciseForm.submit();
       });
+
+      listLogsForm.addEventListener("submit", () => {
+        const userId = document.getElementById("userid").value;
+        listLogsForm.action = `/api/users/${userId}/logs`;
+
+        listLogsForm.submit();
+      });
+      
     </script>
   </body>
 </html>
