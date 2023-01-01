@@ -32,19 +32,18 @@
       </form>
       <form id="list-logs-form" method="GET">
         <h3>List User Log</h3>
-        <p><code>GET /api/users/:_id/logs</code></p>
-        <input id="userid" type="text" name=":_id" placeholder=":_id" />
+        <p>
+          <strong>GET user's exercise log: </strong><br><br>
+          <code>GET /api/users/:_id/logs?[from][&amp;to][&amp;limit]</code>
+        </p>
+        <p><strong>[ ]</strong> = optional</p>
+        <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+        <input id="userid" type="text" name=":_id" placeholder=":_id" required/>
         <label>From Date: (optional)<input id="from" type="date" name="from"/></label>
         <label>To Date: (optional)<input id="to" type="date" name="to"/></label>
         <label>Limit: (optional)<input id="limit" type="number" name="limit"/></label>
         <input type="submit" value="Submit" />
       </form>
-      <p>
-        <strong>GET user's exercise log: </strong>
-        <code>GET /api/users/:_id/logs?[from][&amp;to][&amp;limit]</code>
-      </p>
-      <p><strong>[ ]</strong> = optional</p>
-      <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
     </div>
     <script>
       const postExerciseForm = document.getElementById("post-exercise-form");
@@ -58,8 +57,45 @@
       });
 
       listLogsForm.addEventListener("submit", () => {
+        debugger;
         const userId = document.getElementById("userid").value;
-        listLogsForm.action = `/api/users/${userId}/logs`;
+        const fromDate = document.getElementById("from").value;
+        const toDate = document.getElementById("to").value;
+        const limit = document.getElementById("limit").value;
+        let url = "";
+
+        if(fromDate !== "" && toDate !== "") {
+          if(limit !== "") {
+            url = `/api/users/${userId}/logs?from=${fromDate}&to=${toDate}&limit=${limit}`
+          }
+          else {
+            url = `/api/users/${userId}/logs?from=${fromDate}&to=${toDate}`
+          }
+        }
+        else if(toDate !== "") {
+          if(limit !== "") {
+            url = `/api/users/${userId}/logs?to=${toDate}&limit=${limit}`
+          }
+          else {
+            url = `/api/users/${userId}/logs?&to=${toDate}`
+          }
+        }
+        else if(fromDate !== "") {
+          if(limit !== "") {
+            url = `/api/users/${userId}/logs?from=${fromDate}&limit=${limit}`
+          }
+          else {
+            url = `/api/users/${userId}/logs?&from=${fromDate}`
+          }
+        }
+        else if(limit !== "") {
+          url = `/api/users/${userId}/logs?limit=${limit}`
+        }
+        else {
+          url = `/api/users/${userId}/logs`
+        }
+        
+        listLogsForm.action = url;
 
         listLogsForm.submit();
       });

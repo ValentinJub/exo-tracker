@@ -109,7 +109,8 @@ app.post('/api/users/:_id/exercises', (req, res) => {
 
 app.get('/api/users/:_id/logs', (req, res) => {
   const { from, to, limit } = req.query;
-  
+  console.log(req.query)
+  console.log(req.url)  
 
   User.findById(req.params._id, (err, match) => {
     let log = [];
